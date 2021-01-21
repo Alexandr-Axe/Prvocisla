@@ -40,26 +40,20 @@ namespace Prvocisla
         Regex JsouCisla = new Regex("^[0-9]*$");
         private void HorniMez_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            e.Handled = !JsouCisla.IsMatch(HorniMez.Text);
+            e.Handled = !JsouCisla.IsMatch(HorniMez.Text); //Zjišťuje, jestli je vstup číslo (moc nefunkční)
         }
     }
     class Prvocislo
     {
-        
         bool[] je_prv; // Bool pole (rozhodování, zda je číslo prvočíslo)
         public string xp = string.Empty;
         public Prvocislo(int MAX)
         {
-            
             je_prv = new bool[MAX + 1]; // Vytvoříme pole s horní mezí
-
-            
             for (int i = 2; i <= MAX; i++)
             {
                 je_prv[i] = true; // Všechna čísla nastavíme na prvočísla
             }
-
-            
             for (int i = 2; i <= MAX; i++)
             {
                 if (je_prv[i])
