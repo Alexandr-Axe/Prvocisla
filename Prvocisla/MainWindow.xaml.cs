@@ -29,9 +29,10 @@ namespace Prvocisla
         string[] PoleCisel;
         string Trojky = string.Empty;
         string SjednocenaCisla = string.Empty;
-        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+
+        private void VypsatPrvocisla_Click(object sender, RoutedEventArgs e)
         {
-            if (e.Key == Key.Enter)
+            if (Convert.ToInt32(DolniMez.Text) <= Convert.ToInt32(HorniMez.Text))
             {
                 p = new Prvocislo(Convert.ToInt32(HorniMez.Text));
                 p.ShowPrime(Convert.ToInt32(DolniMez.Text));
@@ -57,6 +58,11 @@ namespace Prvocisla
                 Trojky = "";
                 SjednocenaCisla = "";
             }
+            else MessageBox.Show("Horní mez musí být vyšší než dolní!", "CHYBA");
+            DolniMez.Text = "";
+            HorniMez.Text = "";
+            CB3.IsChecked = false;
+            CBMany.IsChecked = false;
         }
         string VypisCislici3(string[] CiselnePole) 
         {

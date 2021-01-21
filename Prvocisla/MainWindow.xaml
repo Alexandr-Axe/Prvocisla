@@ -7,12 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="HorniMez" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyDown="TextBox_KeyDown" PreviewTextInput="HorniMez_PreviewTextInput" Margin="0,102,0,0"/>
+        <TextBox x:Name="HorniMez" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="HorniMez_PreviewTextInput" Margin="0,102,0,0"/>
         <TextBox x:Name="DolniMez" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="HorniMez_PreviewTextInput" Margin="0,74,0,0"/>
-        <TextBox x:Name="PrvocislaVypsana" HorizontalAlignment="Left" Height="191" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="true" Width="196" Margin="296,79,0,0"/>
+        <TextBox x:Name="PrvocislaVypsana" HorizontalAlignment="Left" Height="191" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="true" Width="196" Margin="296,79,0,0" Grid.RowSpan="2"/>
         <CheckBox x:Name="CB3" Content="Vypsat prvočísla, která obsahují číslici 3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,0,0,0"/>
         <CheckBox x:Name="CBMany" Content="Vypsat prvočísla, která obsahují stejnou číslici třikrát za sebou" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,20,0,0"/>
         <Label Content="Horní mez" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,99,0,0"/>
         <Label Content="Dolní mez" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,73,0,0"/>
+        <Button x:Name="VypsatPrvocisla" Content="Vypiš!" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="35,140,0,0" Height="60" Click="VypsatPrvocisla_Click"/>
     </Grid>
 </Window>
