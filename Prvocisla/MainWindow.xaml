@@ -9,11 +9,18 @@
     <Grid>
         <TextBox x:Name="HorniMez" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="HorniMez_PreviewTextInput" Margin="0,102,0,0"/>
         <TextBox x:Name="DolniMez" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="HorniMez_PreviewTextInput" Margin="0,74,0,0"/>
-        <TextBox x:Name="PrvocislaVypsana" HorizontalAlignment="Left" Height="191" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="true" Width="196" Margin="296,79,0,0" Grid.RowSpan="2"/>
+        <TextBox x:Name="PrvocislaVypsana" HorizontalAlignment="Left" Height="191" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="true" Width="196" Margin="211,74,0,0"/>
         <CheckBox x:Name="CB3" Content="Vypsat prvočísla, která obsahují číslici 3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,0,0,0"/>
         <CheckBox x:Name="CBMany" Content="Vypsat prvočísla, která obsahují stejnou číslici třikrát za sebou" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,20,0,0"/>
         <Label Content="Horní mez" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,99,0,0"/>
         <Label Content="Dolní mez" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,73,0,0"/>
-        <Button x:Name="VypsatPrvocisla" Content="Vypiš!" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="35,140,0,0" Height="60" Click="VypsatPrvocisla_Click"/>
+        <Button x:Name="VypsatPrvocisla" Content="Vypiš!" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="275,301,0,0" Height="60" Click="VypsatPrvocisla_Click"/>
+        <TextBox x:Name="PrvocislaVypsana_Trojky" HorizontalAlignment="Left" Height="191" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="true" Width="196" Margin="412,74,0,0"/>
+        <TextBox x:Name="PrvocislaVypsana_Stejne" HorizontalAlignment="Left" Height="191" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="true" Width="169" Margin="613,73,0,0"/>
+        <Label Content="Všechna prvočísla" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="196" Margin="211,270,0,0" HorizontalContentAlignment="Center"/>
+        <Label Content="Prvočísla obsahující číslici 3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="196" Margin="412,270,0,0" HorizontalContentAlignment="Center"/>
+        <Label Content="Prvočísla obsahující 3 stejné číslice za sebou" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="169" Margin="613,270,0,0" HorizontalContentAlignment="Center"/>
+        <Button x:Name="VypsatPrvocisla_Trojky" Content="Vypiš!" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="474,301,0,0" Height="60" Click="VypsatPrvocisla_Trojky_Click"/>
+        <Button x:Name="VypsatPrvocisla_Stejne" Content="Vypiš!" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="669,301,0,0" Height="60" Click="VypsatPrvocisla_Stejne_Click"/>
     </Grid>
 </Window>

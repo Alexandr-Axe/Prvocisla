@@ -32,33 +32,40 @@ namespace Prvocisla
 
         private void VypsatPrvocisla_Click(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToInt32(DolniMez.Text) <= Convert.ToInt32(HorniMez.Text))
+            if (DolniMez.Text.Equals("")) DolniMez.Text = "2";
+            int dolniMez = Convert.ToInt32(DolniMez.Text);
+            if (dolniMez < 2) dolniMez = 2;
+            if (!HorniMez.Text.Equals(""))
             {
-                p = new Prvocislo(Convert.ToInt32(HorniMez.Text));
-                p.ShowPrime(Convert.ToInt32(DolniMez.Text));
-                PrvocislaVypsana.Text = p.xp;
-                PoleCisel = p.xp.Split(' ');
-                p.xp = "";
-                if (CB3.IsChecked == true && CBMany.IsChecked == false)
+                if (dolniMez <= Convert.ToInt32(HorniMez.Text))
                 {
-                    Trojky = VypisCislici3(PoleCisel);
-                    PrvocislaVypsana.Text = Trojky;
+                    p = new Prvocislo(Convert.ToInt32(HorniMez.Text));
+                    p.ShowPrime(dolniMez);
+                    PrvocislaVypsana.Text = p.xp;
+                    PoleCisel = p.xp.Split(' ');
+                    p.xp = "";
+                    if (CB3.IsChecked == true && CBMany.IsChecked == false)
+                    {
+                        Trojky = VypisCislici3(PoleCisel);
+                        PrvocislaVypsana.Text = Trojky;
+                    }
+                    else if (CB3.IsChecked == false && CBMany.IsChecked == true)
+                    {
+                        SjednocenaCisla = VypisSjednoceneCislice(PoleCisel);
+                        PrvocislaVypsana.Text = SjednocenaCisla;
+                    }
+                    else if (CB3.IsChecked == true && CBMany.IsChecked == true)
+                    {
+                        SjednocenaCisla = VypisSjednoceneCislice(PoleCisel);
+                        Trojky = VypisCislici3(SjednocenaCisla.Split(' '));
+                        PrvocislaVypsana.Text = Trojky;
+                    }
+                    Trojky = "";
+                    SjednocenaCisla = "";
                 }
-                else if (CB3.IsChecked == false && CBMany.IsChecked == true)
-                {
-                    SjednocenaCisla = VypisSjednoceneCislice(PoleCisel);
-                    PrvocislaVypsana.Text = SjednocenaCisla;
-                }
-                else if (CB3.IsChecked == true && CBMany.IsChecked == true)
-                {
-                    SjednocenaCisla = VypisSjednoceneCislice(PoleCisel);
-                    Trojky = VypisCislici3(SjednocenaCisla.Split(' '));
-                    PrvocislaVypsana.Text = Trojky;
-                }
-                Trojky = "";
-                SjednocenaCisla = "";
+                else MessageBox.Show("Horní mez je menší než dolní mez!", "CHYBA");
             }
-            else MessageBox.Show("Horní mez musí být vyšší než dolní!", "CHYBA");
+            else MessageBox.Show("Nebyla vyplněna horní mez!", "CHYBA");
             DolniMez.Text = "";
             HorniMez.Text = "";
             CB3.IsChecked = false;
@@ -101,6 +108,16 @@ namespace Prvocisla
         private void HorniMez_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !JsouCisla.IsMatch(HorniMez.Text); //Zjišťuje, jestli je vstup číslo (moc nefunkční)
+        }
+
+        private void VypsatPrvocisla_Trojky_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void VypsatPrvocisla_Stejne_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
     class Prvocislo
